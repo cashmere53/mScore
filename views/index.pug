@@ -11,9 +11,9 @@ block content
             label.control-label Input addons
             div.input-group
                 span.input-group-addon $
-                input.form-control(type='text')
+                input#textbox.form-control(type='text' placeholder='What are you doing?' autocomplete='off')
                 span.input-group-button
-                    button.btn.btn-default(type='button') button
+                    button.btn.btn-default(type='button') Send
         div#contents
             h2 Messages
             div#chatArea
