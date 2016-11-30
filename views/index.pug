@@ -1,5 +1,29 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    div.row
+        div#header.page-header
+            h1= title
+            h4 Welcome to #{title}
+    
+    div.row
+        div#inputForm.form-group
+            label.control-label Input addons
+            div.input-group
+                span.input-group-addon $
+                input.form-control(type='text')
+                span.input-group-button
+                    button.btn.btn-default(type='button') button
+        div#contents
+            h2 Messages
+            div#chatArea
+
+    script(src='/socket.io/socket.io.js')
+    script(src="https://code.jquery.com/jquery-3.1.1.slim.js" integrity="sha256-5i/mQ300M779N2OVDrl16lbohwXNUdzL/R2aVUXyXWA=" crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+    script.
+        const socket = io.connect('http://localhost:3000')
+        socket.on('connected', (name) => {})
+        socket.on('message', (msg) => {
+            console.log(msg)
+        })
