@@ -7,13 +7,14 @@ block content
             h4 Welcome to #{title}
     
     div.row
-        div#inputForm.form-group
-            label.control-label Input addons
-            div.input-group
-                span.input-group-addon $
-                input#textbox.form-control(type='text' placeholder='What are you doing?' autocomplete='off')
-                span.input-group-button
-                    button.btn.btn-default(type='button') Send
+        form.bs-component
+            div#inputForm.form-group
+                label.control-label Input addons
+                div.input-group
+                    span.input-group-addon $
+                    input#textbox.form-control(type='text' placeholder='What are you doing?' autocomplete='off')
+                    span.input-group-button
+                        button.btn.btn-default(type='button') Send
         div#contents
             h2 Messages
             div#chatArea
